@@ -3,7 +3,7 @@ import { FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa';
 
 const About: React.FC = () => {
     return (
-        <section className="pt-28 px-[160px] bg-black">
+        <section className="pt-40 px-[160px] bg-black">
             <div className="bg-gradient-to-b from-[#8c8c8c25] to-[#16161636] backdrop-blur-[4px] border border-white border-opacity-10 rounded-3xl overflow-hidden w-full p-8 flex justify-between items-center">
                 {/* Imagem à esquerda */}
                 <div className="flex justify-center">

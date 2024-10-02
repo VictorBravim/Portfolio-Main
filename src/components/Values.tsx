@@ -39,7 +39,7 @@ const plans = [
 
 const Values: React.FC = () => {
     return (
-        <section className="py-12 px-[144px] bg-black">
+        <section className="pt-40 px-[144px] bg-black">
             <h2 className="font-inter text-[85px] font-bold text-center mb-8">
                 Meus <span className='text-[#0086B0]'>Planos</span>
             </h2>

@@ -31,7 +31,7 @@ const abilitiesData = [
 
 const Abilities: React.FC = () => {
     return (
-        <section className="pt-28 px-[160px] bg-black">
+        <section className="pt-40 px-[160px] bg-black">
             <h2 className="font-inter text-[85px] font-bold text-center mb-8">
                 Habilidades <span className="text-[#0086B0]">Técnicas</span>
             </h2>
