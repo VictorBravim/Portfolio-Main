@@ -9,6 +9,8 @@ const faqs = [
     { question: 'Posso editar meu site depois de pronto?', answer: 'Sim, você terá acesso ao painel de administração para realizar edições.' },
     { question: 'Quais ferramentas vocês utilizam para desenvolvimento?', answer: 'Utilizamos tecnologias modernas como React, Next.js e Tailwind CSS.' },
     { question: 'Você faz manutenção de sites existentes?', answer: 'Sim, ofereço planos de manutenção para sites já existentes.' },
+    { question: 'Quais ferramentas vocês utilizam para desenvolvimento?', answer: 'Utilizamos tecnologias modernas como React, Next.js e Tailwind CSS.' },
+    { question: 'Você faz manutenção de sites existentes?', answer: 'Sim, ofereço planos de manutenção para sites já existentes.' },
 ];
 
 const FAQ: React.FC = () => {
@@ -19,22 +21,25 @@ const FAQ: React.FC = () => {
     };
 
     return (
-        <section className="py-12 px-[144px] bg-black">
+        <section className="pt-40 px-[160px] bg-black">
             <h2 className="font-inter text-[85px] font-bold text-center mb-8">Alguma <span className='text-[#0086B0]'>Dúvida</span>?</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {faqs.map((faq, index) => (
                     <div 
                         key={index} 
-                        className={`bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-lg shadow-md p-6 transition-all duration-300 ease-in-out ${openIndex === index ? 'h-auto' : 'h-16'}`} 
+                        className={`bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-lg shadow-md transition-all duration-300 ease-in-out ${openIndex === index ? 'h-auto' : 'h-16 overflow-hidden'}`} 
                     >
-                        <div className="flex justify-between items-center h-full cursor-pointer" onClick={() => toggleAccordion(index)}>
-                            <h3 className="text-xl font-semibold text-gray-300 text-center">{faq.question}</h3> {/* Tamanho da fonte aumentado */}
+                        <div className="flex justify-between items-center cursor-pointer p-4" onClick={() => toggleAccordion(index)}>
+                            <h3 className="text-xl font-semibold text-gray-300 text-left">{faq.question}</h3>
                             <div className={`transform transition-transform duration-300 ${openIndex === index ? 'rotate-45' : 'rotate-0'}`}>
-                                {openIndex === index ? <FaTimes className="text-gray-300" size={24} /> : <FaPlus className="text-gray-300" size={24} />} {/* Tamanho do ícone aumentado */}
+                                {openIndex === index ? <FaTimes className="text-gray-300" size={24} /> : <FaPlus className="text-gray-300" size={24} />}
                             </div>
                         </div>
+                        {/* Conteúdo do Accordion */}
                         {openIndex === index && (
-                            <p className="mt-2 text-lg text-gray-400">{faq.answer}</p>
+                            <div className={`p-4`}>
+                                <p className="text-lg text-gray-400 text-left">{faq.answer}</p>
+                            </div>
                         )}
                     </div>
                 ))}
