@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const projects = [
     {
@@ -56,32 +58,61 @@ const Projects: React.FC = () => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
                 {projects.map((project, index) => (
-                    <div 
-                        key={index} 
-                        className="relative bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-2xl shadow-md overflow-hidden"
-                    >
-                        <img 
-                            src={project.image} 
-                            alt={`Projeto ${project.name}`} 
-                            className="w-full object-cover"
-                        />
-                        <div 
-                            className="absolute inset-0 bg-black bg-opacity-70 opacity-0 hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center"
-                        >
-                            <h3 className="text-white text-2xl font-bold mb-4">{project.name}</h3>
-                            <a 
-                                href={project.link} 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                className="bg-[#0086B0] text-white py-2 px-4 rounded-full"
-                            >
-                                Visualizar
-                            </a>
-                        </div>
-                    </div>
+                    <ProjectCard key={index} project={project} />
                 ))}
             </div>
         </section>
+    );
+};
+
+const ProjectCard: React.FC<{ project: { name: string; image: string; link: string } }> = ({ project }) => {
+    const [isHovered, setIsHovered] = useState(false);
+
+    return (
+        <motion.div
+            className="relative bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-2xl shadow-md overflow-hidden"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            style={{
+                perspective: '1000px',
+            }}
+        >
+            {/* Card inteiro agora faz a animação 3D */}
+            <motion.div
+                className="w-full h-full"
+                style={{
+                    transform: isHovered ? 'rotateX(15deg)' : 'rotateX(0deg)', // Efeito 3D
+                    transition: 'transform 0.4s ease',
+                }}
+            >
+                <img 
+                    src={project.image} 
+                    alt={`Projeto ${project.name}`} 
+                    className="w-full h-64 object-cover"
+                />
+            </motion.div>
+
+            {/* Botão visível apenas no hover */}
+            <motion.div 
+                className="absolute inset-0 flex justify-center items-center"
+                style={{
+                    opacity: isHovered ? 1 : 0,
+                    transition: 'opacity 0.3s ease',
+                    backgroundColor: 'rgba(0, 0, 0, 0.7)', // Fundo do botão
+                    borderRadius: '16px',
+                    pointerEvents: isHovered ? 'auto' : 'none', // Impede interações quando invisível
+                }}
+            >
+                <a 
+                    href={project.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="bg-[#0086B0] text-white py-2 px-4 rounded-full"
+                >
+                    Visualizar
+                </a>
+            </motion.div>
+        </motion.div>
     );
 };
 
