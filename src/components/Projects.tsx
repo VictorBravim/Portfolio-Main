@@ -7,47 +7,47 @@ const projects = [
     {
         name: 'Seton',
         image: '/images/Seton.png',
-        link: 'https://seton.com'
+        link: 'https://seton-eight.vercel.app/'
     },
     {
         name: 'ArenaX',
         image: '/images/ArenaX.png',
-        link: 'https://arenax.com'
+        link: 'https://arena-x-zeta.vercel.app'
     },
     {
         name: 'Norishi',
         image: '/images/Norishi.png',
-        link: 'https://norishi.com'
+        link: 'https://norishi.vercel.app'
     },
     {
         name: 'RedRoast',
         image: '/images/RedRoast.png',
-        link: 'https://redroast.com'
+        link: 'https://redroast.vercel.app'
     },
     {
         name: 'TrueVR',
         image: '/images/TrueVR.png',
-        link: 'https://truevr.com'
+        link: 'https://truevr.vercel.app'
     },
     {
         name: 'WebStore',
         image: '/images/WebStore.png',
-        link: 'https://webstore.com'
+        link: 'https://web-store-pi.vercel.app'
     },
     {
         name: 'Exotics',
         image: '/images/Exotics.png',
-        link: 'https://exotics.com'
+        link: 'https://exotics.vercel.app'
     },
     {
         name: 'Cofty',
         image: '/images/Cofty.png',
-        link: 'https://cofty.com'
+        link: 'https://cofty.vercel.app'
     },
     {
         name: 'MeshWear',
         image: '/images/MeshWear.png',
-        link: 'https://meshwear.com'
+        link: 'https://meshwear.vercel.app'
     }
 ];
 
