@@ -14,7 +14,7 @@ const About: React.FC = () => {
                     <img
                         src="/images/Perfil.jpeg"
                         alt="Victor Bravim"
-                        className="rounded-full w-[340px] h-[340px] object-cover border-4 border-[#0086B0]"
+                        className="rounded-full w-[340px] h-[340px] object-cover"
                     />
                 </div>
 
