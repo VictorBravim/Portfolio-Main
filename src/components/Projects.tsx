@@ -90,7 +90,7 @@ const ProjectCard: React.FC<{ project: { image: string; link: string } }> = ({ p
             >
                 <div
                     style={{ transform }}
-                    className="w-full h-full flex items-center justify-center overflow-hidden rounded-2xl border border-white/[0.1] p-4 shadow-[0_8px_16px_rgb(0_0_0/0.4)] transition duration-700"
+                    className="w-full h-full flex items-center justify-center overflow-hidden rounded-2xl border border-white/[0.1] transition duration-700"
                 >
                     <img
                         src={project.image}
