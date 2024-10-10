@@ -12,7 +12,7 @@ const About: React.FC = () => {
                 {/* Imagem à esquerda (aumentada) */}
                 <div className="flex justify-center">
                     <img
-                        src="/images/Perfil.jpeg"
+                        src="/images/Perfil.jpg"
                         alt="Victor Bravim"
                         className="rounded-full w-[340px] h-[340px] object-cover"
                     />
