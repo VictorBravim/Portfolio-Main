@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import React, { useState } from "react";
+import Image from "next/image"; // Importando o componente de otimização de imagem do Next.js
 
 const projects = [
     {
@@ -66,7 +67,8 @@ const Projects: React.FC = () => {
     );
 };
 
-const ProjectCard: React.FC<{ project: { image: string; link: string } }> = ({ project }) => {
+// Corrigindo a tipagem para incluir a propriedade 'name'
+const ProjectCard: React.FC<{ project: { name: string; image: string; link: string } }> = ({ project }) => {
     const [transform, setTransform] = useState("rotateX(0deg) scale(1)");
 
     const onMouseEnter = () => {
@@ -92,10 +94,14 @@ const ProjectCard: React.FC<{ project: { image: string; link: string } }> = ({ p
                     style={{ transform }}
                     className="w-full h-full flex items-center justify-center overflow-hidden rounded-2xl border border-white/[0.1] transition duration-700"
                 >
-                    <img
+                    {/* Usando o componente Image do Next.js para otimizar o carregamento */}
+                    <Image
                         src={project.image}
-                        alt="Project Image"
-                        className="w-full h-full object-cover rounded-lg" // Garante que a imagem ocupe o espaço corretamente
+                        alt={project.name}
+                        width={500}
+                        height={300}
+                        className="w-full h-full object-cover rounded-lg"
+                        priority={false} // Ajuste de prioridade
                     />
                 </div>
 
