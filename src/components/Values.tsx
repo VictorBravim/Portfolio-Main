@@ -54,8 +54,8 @@ const plans = [
 
 const Values: React.FC = () => {
     return (
-        <section className="pt-40 px-4 sm:px-8 lg:px-[160px] bg-black"> {/* Ajustado para responsividade */}
-            <h2 className="font-inter text-[40px] sm:text-[60px] lg:text-[85px] font-bold text-center mb-8">
+        <section className="pt-20 lg:pt-40 px-4 sm:px-8 lg:px-[160px] bg-black"> {/* Ajustado para responsividade */}
+            <h2 className="font-inter text-[25px] lg:text-[85px] font-bold text-center mb-8">
                 Meus <span className='text-[#0086B0]'>Planos</span>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

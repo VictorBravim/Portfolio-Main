@@ -45,8 +45,8 @@ const FAQ: React.FC = () => {
     };
 
     return (
-        <section className="pt-40 px-4 sm:px-8 lg:px-[160px] bg-black">
-            <h2 className="font-inter text-[40px] sm:text-[60px] lg:text-[85px] font-bold text-center mb-8">
+        <section className="pt-20 lg:pt-40 px-4 sm:px-8 lg:px-[160px] bg-black">
+            <h2 className="font-inter text-[25px] lg:text-[85px] font-bold text-center mb-8">
                 Alguma <span className='text-[#0086B0]'>Dúvida</span>?
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -56,7 +56,7 @@ const FAQ: React.FC = () => {
                         className={`bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-lg shadow-md transition-all duration-300 ease-in-out ${openIndex === index ? 'h-auto' : 'h-16 overflow-hidden'}`}
                     >
                         <div className="flex justify-between items-center cursor-pointer p-4" onClick={() => toggleAccordion(index)}>
-                            <h3 className="text-xl font-semibold text-gray-300 text-left">{faq.question}</h3>
+                            <h3 className="text-sm lg:text-xl font-semibold text-gray-300 text-left">{faq.question}</h3>
                             <div className={`transform transition-transform duration-300 ${openIndex === index ? 'rotate-45' : 'rotate-0'}`}>
                                 {openIndex === index ? <FaTimes className="text-gray-300" size={24} /> : <FaPlus className="text-gray-300" size={24} />}
                             </div>

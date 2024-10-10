@@ -54,8 +54,8 @@ const projects = [
 
 const Projects: React.FC = () => {
     return (
-        <section className="py-12 px-4 sm:px-8 lg:px-20 bg-black">
-            <h2 className="font-inter text-[40px] sm:text-[60px] lg:text-[85px] font-bold text-center mb-8">
+        <section className="lg:py-12 px-4 sm:px-8 lg:px-[160px] bg-black">
+            <h2 className="font-inter text-[25px] lg:text-[85px] font-bold text-center mb-8">
                 Projetos <span className="text-[#0086B0]">Recentes</span>
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -89,7 +89,7 @@ const ProjectCard: React.FC<{ project: { name: string; image: string; link: stri
             >
                 <div
                     style={{ transform }}
-                    className="w-full h-full flex items-center justify-center overflow-hidden rounded-2xl border border-white/[0.1] transition duration-700"
+                    className="w-full h-full flex items-center justify-center overflow-hidden rounded-lg border border-white/[0.1] transition duration-700"
                 >
                     <Image
                         src={project.image}

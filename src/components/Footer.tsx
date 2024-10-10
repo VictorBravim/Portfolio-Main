@@ -58,8 +58,8 @@ const Footer: React.FC = () => {
     return (
         <footer className="relative bg-black">
             <div
-                className="bg-cover bg-center"
-                style={{ backgroundImage: 'url(/images/Footer.png)', height: '900px' }}
+                className="bg-cover bg-center h-[1050px] lg:h-[900px]"
+                style={{ backgroundImage: 'url(/images/Footer.png)' }}
             >
                 <div className="flex flex-col items-center justify-center h-full px-4 md:px-[160px] pt-10">
                     {/* Card maior que engloba os contatos e o formulário */}
