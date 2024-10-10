@@ -24,7 +24,7 @@ const Hero: React.FC = () => {
                     <button className="text-[12px] lg:text-[26px] font-bold px-8 py-1.5 bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-full">Contato</button>
                     <button className="text-[12px] lg:text-[26px] font-bold px-8 py-1.5 bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-full">Orçamento</button>
                 </div>
-                <div className="grid gap-4 mt-8 w-full px-4 sm:px-20 md:px-40">
+                <div className="grid gap-4 mt-8 lg:mt-32 w-full px-4 sm:px-20 md:px-40">
                     <div className="flex flex-col md:flex-row justify-center gap-8 mb-2">
                         <div className="bg-gradient-to-b from-[#8c8c8c10] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 w-full md:w-[65%] h-[40vw] md:h-[25vw] rounded-2xl flex items-center justify-center p-2">
                           <div className="bg-gradient-to-b from-[#8c8c8c0c] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 w-full h-full rounded-2xl flex items-center justify-center p-4">
