@@ -31,11 +31,11 @@ const abilitiesData = [
 
 const Abilities: React.FC = () => {
     return (
-        <section className="pt-40 px-[160px] bg-black">
-            <h2 className="font-inter text-[85px] font-bold text-center mb-8">
+        <section className="pt-40 px-4 sm:px-8 lg:px-[160px] bg-black">
+            <h2 className="font-inter text-[40px] sm:text-[60px] lg:text-[85px] font-bold text-center mb-8">
                 Habilidades <span className="text-[#0086B0]">Técnicas</span>
             </h2>
-            <div className="grid grid-cols-5 md:grid-cols-6 lg:grid-cols-10 gap-12">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-10 gap-6 sm:gap-8 lg:gap-12">
                 {abilitiesData.map(({ icon: Icon, name, color }, index) => (
                     <div 
                         key={index} 
@@ -43,7 +43,7 @@ const Abilities: React.FC = () => {
                         style={{ perspective: '1000px' }}
                     >
                         <Icon 
-                            className="text-5xl group-hover:transform group-hover:scale-110 transition-transform duration-300 ease-out" 
+                            className="text-4xl sm:text-5xl group-hover:transform group-hover:scale-110 transition-transform duration-300 ease-out" 
                             style={{ color }} 
                             title={name} 
                         />

@@ -54,22 +54,25 @@ const plans = [
 
 const Values: React.FC = () => {
     return (
-        <section className="pt-40 px-[160px] bg-black"> {/* Ajustado para 160px */}
-            <h2 className="font-inter text-[85px] font-bold text-center mb-8">
+        <section className="pt-40 px-4 sm:px-8 lg:px-[160px] bg-black"> {/* Ajustado para responsividade */}
+            <h2 className="font-inter text-[40px] sm:text-[60px] lg:text-[85px] font-bold text-center mb-8">
                 Meus <span className='text-[#0086B0]'>Planos</span>
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"> {/* Quatro cards em layout grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {plans.map((plan, index) => (
-                    <div key={index} className="bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-lg shadow-md p-6 flex flex-col items-center">
+                    <div 
+                        key={index} 
+                        className="bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-lg shadow-md p-6 flex flex-col items-center"
+                    >
                         <div className="mb-4">{plan.icon}</div>
                         <h3 className="text-2xl font-bold text-gray-300">{plan.title}</h3>
                         <p className="mt-2 text-lg text-gray-400 text-center">{plan.description}</p>
-                        <p className="mt-4 text-xl font-bold text-gray-200">{plan.price}</p> {/* Valor do plano */}
+                        <p className="mt-4 text-xl font-bold text-gray-200">{plan.price}</p> 
 
                         <ul className="mt-4 text-gray-400 text-left">
                             {plan.benefits.map((benefit, index) => (
                                 <li key={index} className="flex items-start mt-1">
-                                    <span className="mr-2">•</span> {/* Bullet Point */}
+                                    <span className="mr-2">•</span> 
                                     <span>{benefit}</span>
                                 </li>
                             ))}

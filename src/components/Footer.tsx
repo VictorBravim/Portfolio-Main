@@ -44,15 +44,14 @@ const Footer: React.FC = () => {
         )
         .then(() => {
             setIsSent(true); // Atualiza o estado para indicar que a mensagem foi enviada
+            setFormData({
+                user_name: '',
+                user_email: '',
+                message: ''
+            }); // Limpa os campos após envio
         }, (error) => {
             console.log(error.text);
             alert('Erro ao enviar mensagem. Por favor, tente novamente mais tarde.'); // Alerta simples sem Toast
-        });
-    
-        setFormData({
-            user_name: '',
-            user_email: '',
-            message: ''
         });
     };
 
@@ -62,7 +61,7 @@ const Footer: React.FC = () => {
                 className="bg-cover bg-center"
                 style={{ backgroundImage: 'url(/images/Footer.png)', height: '900px' }}
             >
-                <div className="flex flex-col items-center justify-center h-full px-[160px] pt-10">
+                <div className="flex flex-col items-center justify-center h-full px-4 md:px-[160px] pt-10">
                     {/* Card maior que engloba os contatos e o formulário */}
                     <div className="bg-gradient-to-b from-[#8c8c8c0c] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-lg p-8 w-full">
                         <div className="flex flex-col md:flex-row gap-8 w-full">
@@ -70,7 +69,7 @@ const Footer: React.FC = () => {
                             <div className="flex flex-col space-y-4 w-full md:w-1/3">
                                 <a
                                     href="https://wa.me/5512996839077"
-                                    className="bg-gradient-to-b from-[#8c8c8c0c] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-lg p-6 flex flex-col items-center justify-center text-center flex-grow cursor-pointer"
+                                    className="bg-gradient-to-b from-[#8c8c8c0c] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-lg p-6 flex flex-col items-center justify-center text-center flex-grow cursor-pointer transition-transform duration-200 hover:scale-105"
                                 >
                                     <FaWhatsapp className="text-white mb-2" size={40} />
                                     <div>
@@ -80,7 +79,7 @@ const Footer: React.FC = () => {
                                 </a>
                                 <a
                                     href="mailto:victorrafaelbravim@gmail.com"
-                                    className="bg-gradient-to-b from-[#8c8c8c0c] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-lg p-6 flex flex-col items-center justify-center text-center flex-grow cursor-pointer"
+                                    className="bg-gradient-to-b from-[#8c8c8c0c] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-lg p-6 flex flex-col items-center justify-center text-center flex-grow cursor-pointer transition-transform duration-200 hover:scale-105"
                                 >
                                     <FaEnvelope className="text-white mb-2" size={40} />
                                     <div>
@@ -101,7 +100,7 @@ const Footer: React.FC = () => {
                                             placeholder="Seu Nome" 
                                             value={formData.user_name}
                                             onChange={handleInputChange}
-                                            className="p-3 rounded border border-white border-opacity-10 bg-transparent text-gray-300 focus:outline-none focus:border-[#0086B0]"
+                                            className="p-3 rounded border border-white border-opacity-10 bg-transparent text-gray-300 focus:outline-none focus:border-[#0086B0] transition duration-200"
                                             required
                                         />
                                         <input 
@@ -110,7 +109,7 @@ const Footer: React.FC = () => {
                                             placeholder="Seu Email" 
                                             value={formData.user_email}
                                             onChange={handleInputChange}
-                                            className="p-3 rounded border border-white border-opacity-10 bg-transparent text-gray-300 focus:outline-none focus:border-[#0086B0]"
+                                            className="p-3 rounded border border-white border-opacity-10 bg-transparent text-gray-300 focus:outline-none focus:border-[#0086B0] transition duration-200"
                                             required
                                         />
                                         <textarea 
@@ -118,13 +117,13 @@ const Footer: React.FC = () => {
                                             placeholder="Sua Mensagem" 
                                             value={formData.message}
                                             onChange={handleInputChange}
-                                            className="p-3 rounded border border-white border-opacity-10 bg-transparent text-gray-300 focus:outline-none focus:border-[#0086B0]"
+                                            className="p-3 rounded border border-white border-opacity-10 bg-transparent text-gray-300 focus:outline-none focus:border-[#0086B0] transition duration-200"
                                             rows={4}
                                             required
                                         />
                                         <button 
                                             type="submit" 
-                                            className={`p-3 rounded ${isSent ? 'bg-white text-black' : 'bg-[#0086B0] hover:bg-white text-white hover:text-black'}`}
+                                            className={`p-3 rounded ${isSent ? 'bg-white text-black' : 'bg-[#0086B0] hover:bg-white text-white hover:text-black transition duration-200'}`}
                                             disabled={isSent} // Desabilita o botão após o envio
                                         >
                                             {isSent ? 'Enviado' : 'Enviar'}

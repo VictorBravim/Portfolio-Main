@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import React, { useState } from "react";
-import Image from "next/image"; // Importando o componente de otimização de imagem do Next.js
+import Image from "next/image";
 
 const projects = [
     {
@@ -54,11 +54,11 @@ const projects = [
 
 const Projects: React.FC = () => {
     return (
-        <section className="py-12 px-[144px] bg-black">
-            <h2 className="font-inter text-[85px] font-bold text-center mb-8">
+        <section className="py-12 px-4 sm:px-8 lg:px-20 bg-black">
+            <h2 className="font-inter text-[40px] sm:text-[60px] lg:text-[85px] font-bold text-center mb-8">
                 Projetos <span className="text-[#0086B0]">Recentes</span>
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {projects.map((project, index) => (
                     <ProjectCard key={index} project={project} />
                 ))}
@@ -67,12 +67,11 @@ const Projects: React.FC = () => {
     );
 };
 
-// Corrigindo a tipagem para incluir a propriedade 'name'
 const ProjectCard: React.FC<{ project: { name: string; image: string; link: string } }> = ({ project }) => {
     const [transform, setTransform] = useState("rotateX(0deg) scale(1)");
 
     const onMouseEnter = () => {
-        setTransform("rotateX(40deg) scale(0.9)"); // Efeito de cair para trás
+        setTransform("rotateX(40deg) scale(0.9)");
     };
     const onMouseLeave = () => {
         setTransform("rotateX(0deg) scale(1)");
@@ -85,27 +84,23 @@ const ProjectCard: React.FC<{ project: { name: string; image: string; link: stri
             onMouseLeave={onMouseLeave}
         >
             <div
-                style={{
-                    perspective: "1000px", // Define profundidade 3D
-                }}
+                style={{ perspective: "1000px" }}
                 className="relative flex items-center justify-center"
             >
                 <div
                     style={{ transform }}
                     className="w-full h-full flex items-center justify-center overflow-hidden rounded-2xl border border-white/[0.1] transition duration-700"
                 >
-                    {/* Usando o componente Image do Next.js para otimizar o carregamento */}
                     <Image
                         src={project.image}
                         alt={project.name}
                         width={500}
                         height={300}
                         className="w-full h-full object-cover rounded-lg"
-                        priority={false} // Ajuste de prioridade
+                        priority={false}
                     />
                 </div>
 
-                {/* Botão de Ação em cima da imagem */}
                 <motion.div
                     className="absolute inset-0 flex items-center justify-center opacity-0 transition duration-500 group-hover:opacity-100 z-10"
                 >

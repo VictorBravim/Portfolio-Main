@@ -45,8 +45,8 @@ const FAQ: React.FC = () => {
     };
 
     return (
-        <section className="pt-40 px-[160px] bg-black">
-            <h2 className="font-inter text-[85px] font-bold text-center mb-8">
+        <section className="pt-40 px-4 sm:px-8 lg:px-[160px] bg-black">
+            <h2 className="font-inter text-[40px] sm:text-[60px] lg:text-[85px] font-bold text-center mb-8">
                 Alguma <span className='text-[#0086B0]'>Dúvida</span>?
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
