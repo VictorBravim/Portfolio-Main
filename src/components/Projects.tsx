@@ -1,7 +1,8 @@
 'use client';
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
 const projects = [
@@ -53,16 +54,48 @@ const projects = [
 ];
 
 const Projects: React.FC = () => {
+    // Controle de animação do Framer Motion
+    const controls = useAnimation();
+    // Detecta se a seção "Projects" está visível
+    const { ref, inView } = useInView({
+        triggerOnce: true,  // Anima apenas uma vez
+        threshold: 0.1,     // Quando 10% da seção entra na tela
+    });
+
+    // Dispara a animação apenas quando a seção está em vista
+    useEffect(() => {
+        if (inView) {
+            controls.start("visible");
+        }
+    }, [inView, controls]);
+
     return (
-        <section className="lg:py-12 px-4 sm:px-8 lg:px-[160px] bg-black">
-            <h2 className="font-inter text-[25px] lg:text-[85px] font-bold text-center mb-8">
+        <section ref={ref} className="lg:py-12 px-4 sm:px-8 lg:px-[160px] bg-black">
+            <h2 className="font-inter text-[25px] lg:text-[75px] font-bold text-center mb-8">
                 Projetos <span className="text-[#0086B0]">Recentes</span>
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <motion.div 
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+                initial="hidden"
+                animate={controls}  // Controla a animação com base no scroll
+                variants={{
+                    visible: {
+                        opacity: 1,
+                        y: 0,
+                        transition: {
+                            staggerChildren: 0.2
+                        }
+                    },
+                    hidden: {
+                        opacity: 0,
+                        y: 20
+                    }
+                }}
+            >
                 {projects.map((project, index) => (
                     <ProjectCard key={index} project={project} />
                 ))}
-            </div>
+            </motion.div>
         </section>
     );
 };
@@ -78,10 +111,13 @@ const ProjectCard: React.FC<{ project: { name: string; image: string; link: stri
     };
 
     return (
-        <div
+        <motion.div
             className="group relative z-50 cursor-pointer"
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
         >
             <div
                 style={{ perspective: "1000px" }}
@@ -98,6 +134,7 @@ const ProjectCard: React.FC<{ project: { name: string; image: string; link: stri
                         height={300}
                         className="w-full h-full object-cover rounded-lg"
                         priority={false}
+                        draggable={false}
                     />
                 </div>
 
@@ -115,7 +152,7 @@ const ProjectCard: React.FC<{ project: { name: string; image: string; link: stri
                     </Link>
                 </motion.div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

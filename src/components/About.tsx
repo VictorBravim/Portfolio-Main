@@ -1,14 +1,33 @@
+'use client';
 import React from 'react';
 import { FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const About: React.FC = () => {
+    // Define o observer
+    const { ref, inView } = useInView({
+        threshold: 0.1, // Define o ponto em que a animação será ativada
+        triggerOnce: true // Garante que a animação aconteça apenas uma vez
+    });
+
+    // Define as animações para a entrada
+    const fadeIn = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+    };
+
     return (
-        <section className="pt-20 lg:pt-28 px-4 sm:px-8 lg:px-[160px] bg-black">
-            <h2 className="font-inter text-[25px] lg:text-[85px] font-bold text-center mb-8">
+        <section className="pt-20 lg:pt-28 px-4 sm:px-8 lg:px-[160px] bg-black" ref={ref}>
+            <h2 className="font-inter text-[25px] lg:text-[75px] font-bold text-center mb-8">
                 Sobre <span className="text-[#0086B0]">Mim</span>
             </h2>
-            <div className="bg-gradient-to-b from-[#8c8c8c25] to-[#16161636] backdrop-blur-[4px] border border-white border-opacity-10 rounded-3xl overflow-hidden w-full p-4 sm:p-8 flex flex-col sm:flex-row items-center space-y-8 sm:space-y-0 sm:space-x-12">
-                
+            <motion.div
+                className="bg-gradient-to-b from-[#8c8c8c25] to-[#16161636] backdrop-blur-[4px] border border-white border-opacity-10 rounded-3xl overflow-hidden w-full p-4 sm:p-8 flex flex-col sm:flex-row items-center space-y-8 sm:space-y-0 sm:space-x-12"
+                initial="hidden"
+                animate={inView ? "visible" : "hidden"}
+                variants={fadeIn}
+            >
                 {/* Imagem à esquerda (aumentada) */}
                 <div className="flex justify-center">
                     <img
@@ -70,7 +89,7 @@ const About: React.FC = () => {
                         <FaGithub />
                     </a>
                 </div>
-            </div>
+            </motion.div>
         </section>
     );
 };

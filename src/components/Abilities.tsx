@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { 
     SiJavascript, SiReact, SiNextdotjs, SiCss3, SiTailwindcss, 
@@ -5,6 +6,8 @@ import {
     SiHtml5, SiBootstrap, SiPhp, SiFigma, SiGraphql, 
     SiNodedotjs, SiAmazon, SiCanva, SiGithub, SiAdobephotoshop
 } from 'react-icons/si';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const abilitiesData = [
     { icon: SiJavascript, name: 'JavaScript', color: '#F7DF1E' },
@@ -30,26 +33,46 @@ const abilitiesData = [
 ];
 
 const Abilities: React.FC = () => {
+    // Define o observer
+    const { ref, inView } = useInView({
+        threshold: 0.1, // Ativa a animação quando 10% da seção estiver visível
+        triggerOnce: true // A animação ocorre apenas uma vez
+    });
+
+    // Define a animação de entrada
+    const fadeIn = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+    };
+
     return (
-        <section className="pt-20 lg:pt-40 px-4 sm:px-8 lg:px-[160px] bg-black">
-            <h2 className="font-inter text-[25px] lg:text-[85px] font-bold text-center mb-8">
+        <section className="pt-20 lg:pt-40 px-4 sm:px-8 lg:px-[160px] bg-black" ref={ref}>
+            <h2 className="font-inter text-[25px] lg:text-[75px] font-bold text-center mb-8">
                 Habilidades <span className="text-[#0086B0]">Técnicas</span>
             </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-10 gap-4 sm:gap-8 lg:gap-12">
+            <motion.div
+                className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-10 gap-4 sm:gap-8 lg:gap-12"
+                initial="hidden"
+                animate={inView ? "visible" : "hidden"}
+                variants={fadeIn}
+            >
                 {abilitiesData.map(({ icon: Icon, name, color }, index) => (
-                    <div 
+                    <motion.div 
                         key={index} 
                         className="group bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-lg flex items-center justify-center h-24 transition-transform duration-300 transform hover:rotate-3 hover:-translate-y-2 hover:shadow-lg"
                         style={{ perspective: '1000px' }}
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={inView ? { opacity: 1, scale: 1 } : {}}
+                        transition={{ duration: 0.5, delay: index * 0.05 }} // Delays baseados no índice
                     >
                         <Icon 
                             className="text-5xl group-hover:transform group-hover:scale-110 transition-transform duration-300 ease-out" 
                             style={{ color }} 
                             title={name} 
                         />
-                    </div>
+                    </motion.div>
                 ))}
-            </div>
+            </motion.div>
         </section>
     );
 };

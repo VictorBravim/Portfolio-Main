@@ -1,5 +1,8 @@
+'use client';
 import React from 'react';
 import { FaClipboardList, FaCode, FaRocket, FaWrench } from 'react-icons/fa'; // Ícones ajustados
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const plans = [
     {
@@ -53,16 +56,31 @@ const plans = [
 ];
 
 const Values: React.FC = () => {
+    const { ref, inView } = useInView({
+        threshold: 0.1, // Ativa a animação quando 10% da seção estiver visível
+        triggerOnce: true // A animação ocorre apenas uma vez
+    });
+
+    // Define a animação de entrada
+    const fadeIn = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+    };
+
     return (
-        <section className="pt-20 lg:pt-40 px-4 sm:px-8 lg:px-[160px] bg-black"> {/* Ajustado para responsividade */}
-            <h2 className="font-inter text-[25px] lg:text-[85px] font-bold text-center mb-8">
+        <section className="pt-20 lg:pt-40 px-4 sm:px-8 lg:px-[160px] bg-black" ref={ref}>
+            <h2 className="font-inter text-[25px] lg:text-[75px] font-bold text-center mb-8">
                 Meus <span className='text-[#0086B0]'>Planos</span>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {plans.map((plan, index) => (
-                    <div 
+                    <motion.div 
                         key={index} 
                         className="bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-lg shadow-md p-6 flex flex-col items-center"
+                        initial="hidden"
+                        animate={inView ? "visible" : "hidden"}
+                        variants={fadeIn}
+                        transition={{ duration: 0.5, delay: index * 0.1 }} // Delay baseado no índice
                     >
                         <div className="mb-4">{plan.icon}</div>
                         <h3 className="text-2xl font-bold text-gray-300">{plan.title}</h3>
@@ -81,7 +99,7 @@ const Values: React.FC = () => {
                         <button className="mt-6 bg-[#0086B0] text-white py-2 px-4 rounded-full hover:bg-[#007BA0] transition-colors duration-200">
                             Contratar
                         </button>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
         </section>

@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import { FaWhatsapp, FaEnvelope } from 'react-icons/fa'; // Importando os ícones
 import emailjs from 'emailjs-com';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const Footer: React.FC = () => {
     const [formData, setFormData] = useState({
@@ -10,6 +12,10 @@ const Footer: React.FC = () => {
         message: ''
     });
     const [isSent, setIsSent] = useState(false); // Estado para controlar se a mensagem foi enviada
+    const { ref, inView } = useInView({
+        threshold: 0.1, // Ativa a animação quando 10% da seção estiver visível
+        triggerOnce: true // A animação ocorre apenas uma vez
+    });
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
@@ -21,21 +27,21 @@ const Footer: React.FC = () => {
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-    
+
         const { user_name, user_email, message } = formData;
-    
+
         // Validação simples de email usando expressão regular
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(user_email)) {
             alert('Por favor, insira um endereço de email válido.'); // Mensagem de erro para email inválido
             return;
         }
-    
+
         if (!user_name || !message) {
             alert('Por favor, preencha todos os campos.'); // Alerta simples sem Toast
             return;
         }
-    
+
         emailjs.send(
             'service_bravim',
             'template_2cunb5k',
@@ -61,7 +67,13 @@ const Footer: React.FC = () => {
                 className="bg-cover bg-center h-[1050px] lg:h-[900px]"
                 style={{ backgroundImage: 'url(/images/Footer.png)' }}
             >
-                <div className="flex flex-col items-center justify-center h-full px-4 md:px-[160px] pt-10">
+                <motion.div
+                    ref={ref}
+                    className="flex flex-col items-center justify-center h-full px-4 md:px-[160px] pt-10"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={inView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.5 }}
+                >
                     {/* Card maior que engloba os contatos e o formulário */}
                     <div className="bg-gradient-to-b from-[#8c8c8c0c] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-lg p-8 w-full">
                         <div className="flex flex-col md:flex-row gap-8 w-full">
@@ -133,7 +145,7 @@ const Footer: React.FC = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </footer>
     );
