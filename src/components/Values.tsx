@@ -9,7 +9,7 @@ const plans = [
         title: 'Manutenção',
         description: 'Serviço de suporte e manutenção para garantir a estabilidade.',
         price: 'R$ 149',
-        icon: <FaWrench size={48} className="text-[#0086B0]" />,
+        icon: <FaWrench size={64} className="text-[#0086B0]" />,
         benefits: [
             'Correção de bugs',
             'Atualizações de segurança',
@@ -21,7 +21,7 @@ const plans = [
         title: 'Básico',
         description: 'Prototipagem e design UI/UX para sua aplicação.',
         price: 'R$ 299',
-        icon: <FaClipboardList size={48} className="text-[#0086B0]" />,
+        icon: <FaClipboardList size={64} className="text-[#0086B0]" />,
         benefits: [
             'Design responsivo',
             'Prototipagem no Figma',
@@ -33,7 +33,7 @@ const plans = [
         title: 'Plus',
         description: 'Desenvolvimento completo com código otimizado.',
         price: 'R$ 599',
-        icon: <FaCode size={48} className="text-[#0086B0]" />,
+        icon: <FaCode size={64} className="text-[#0086B0]" />,
         benefits: [
             'Código limpo e otimizado',
             'Integração com APIs',
@@ -45,7 +45,7 @@ const plans = [
         title: 'Avançado',
         description: 'Desenvolvimento com ferramentas no-code como WordPress.',
         price: 'R$ 999',
-        icon: <FaRocket size={48} className="text-[#0086B0]" />,
+        icon: <FaRocket size={64} className="text-[#0086B0]" />,
         benefits: [
             'Criação com WordPress',
             'Customização via Elementor',

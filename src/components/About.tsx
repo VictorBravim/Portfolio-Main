@@ -23,7 +23,7 @@ const About: React.FC = () => {
                 Sobre <span className="text-[#0086B0]">Mim</span>
             </h2>
             <motion.div
-                className="bg-gradient-to-b from-[#8c8c8c25] to-[#16161636] backdrop-blur-[4px] border border-white border-opacity-10 rounded-3xl overflow-hidden w-full p-4 sm:p-8 flex flex-col sm:flex-row items-center space-y-8 sm:space-y-0 sm:space-x-12"
+                className="bg-gradient-to-b from-[#8c8c8c25] to-[#16161636] backdrop-blur-[4px] border border-white border-opacity-10 rounded-lg overflow-hidden w-full p-4 sm:p-8 flex flex-col sm:flex-row items-center space-y-8 sm:space-y-0 sm:space-x-12"
                 initial="hidden"
                 animate={inView ? "visible" : "hidden"}
                 variants={fadeIn}

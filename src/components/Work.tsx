@@ -5,10 +5,10 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 const workflowData = [
-    { title: 'Briefing', icon: <FaClipboardList size={80} /> },
-    { title: 'Prototipagem', icon: <FaDraftingCompass size={80} /> },
-    { title: 'Desenvolvimento', icon: <FaCode size={80} /> },
-    { title: 'Entrega/Suporte', icon: <FaHeadset size={80} /> },
+    { title: 'Briefing', icon: <FaClipboardList className="text-[112px] lg:text-[96px]" /> },
+    { title: 'Prototipagem', icon: <FaDraftingCompass className="text-[112px] lg:text-[96px]" /> },
+    { title: 'Desenvolvimento', icon: <FaCode className="text-[112px] lg:text-[96px]" /> },
+    { title: 'Entrega/Suporte', icon: <FaHeadset className="text-[112px] lg:text-[96px]" /> },
 ];
 
 const Work: React.FC = () => {
@@ -40,8 +40,10 @@ const Work: React.FC = () => {
                             transition={{ duration: 0.5, delay: index * 0.1 }} // Delay baseado no índice
                         >
                             <div className="bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-lg shadow-md w-full h-[320px] flex flex-col items-center justify-center text-center p-4">
+                            <div className="bg-gradient-to-b from-[#8c8c8c10] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-lg shadow-md w-full h-[320px] flex flex-col items-center justify-center text-center p-4">
                                 {item.icon}
                                 <h3 className="mt-4 text-2xl font-bold text-gray-300">{item.title}</h3>
+                                </div>
                             </div>
                         </motion.div>
                         {index < workflowData.length - 1 && (

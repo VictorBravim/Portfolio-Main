@@ -75,7 +75,7 @@ const Footer: React.FC = () => {
                     transition={{ duration: 0.5 }}
                 >
                     {/* Card maior que engloba os contatos e o formulário */}
-                    <div className="bg-gradient-to-b from-[#8c8c8c0c] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-lg p-8 w-full">
+                    <div className="bg-gradient-to-b from-[#8c8c8c0c] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-lg p-4 w-full">
                         <div className="flex flex-col md:flex-row gap-8 w-full">
                             {/* Coluna da esquerda - Contatos */}
                             <div className="flex flex-col space-y-4 w-full md:w-1/3">
