@@ -47,7 +47,7 @@ const Hero: React.FC = () => {
                     <span className='text-[#0086B0]'>Transformando conceitos</span> em <br /> experiências de usuários
                 </motion.h1>
 
-                <motion.p className="text-[20px] lg:text-[30px] lg:font-semibold mt-4 text-center" variants={itemVariants}>
+                <motion.p className="text-[18px] lg:text-[30px] lg:font-semibold mt-4 text-center" variants={itemVariants}>
                     Olá, sou Victor Bravim, desenvolvedor <span className='text-[#0086B0]'>Front-End.</span>
                 </motion.p>
 
