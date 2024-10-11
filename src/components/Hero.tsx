@@ -47,10 +47,15 @@ const Hero: React.FC = () => {
                     <span className='text-[#0086B0]'>Transformando conceitos</span> em <br /> experiências de usuários
                 </motion.h1>
 
-                <motion.p className="text-[18px] lg:text-[30px] lg:font-semibold mt-4 text-center" variants={itemVariants}>
-                    Olá, sou Victor Bravim, desenvolvedor <span className='text-[#0086B0]'>Front-End.</span>
+                <motion.p className="text-[20px] lg:text-[30px] lg:font-semibold mt-4 text-center" variants={itemVariants}>
+                    <span className="block lg:hidden">
+                        Olá, sou Victor Bravim, <br /> desenvolvedor <span className='text-[#0086B0]'>Front-End.</span>
+                    </span>
+                    <span className="hidden lg:block">
+                        Olá, sou Victor Bravim, desenvolvedor <span className='text-[#0086B0]'>Front-End.</span>
+                    </span>
                 </motion.p>
-
+                
                 <motion.div className="mt-8 space-x-4 flex flex-row justify-center" variants={itemVariants}>
                     <button
                         className="text-[18px] lg:text-[24px] font-bold px-8 py-1.5 bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-full"
