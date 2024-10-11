@@ -43,11 +43,11 @@ const Hero: React.FC = () => {
                     </button>
                 </motion.div>
 
-                <motion.h1 className="font-inter text-[50px] lg:text-[85px] font-bold text-center leading-tight w-full" variants={itemVariants}>
+                <motion.h1 className="font-inter text-[40px] lg:text-[85px] font-bold text-center leading-tight w-full" variants={itemVariants}>
                     <span className='text-[#0086B0]'>Transformando conceitos</span> em <br /> experiências de usuários
                 </motion.h1>
 
-                <motion.p className="text-[24px] lg:text-[30px] lg:font-semibold mt-4 text-center" variants={itemVariants}>
+                <motion.p className="text-[20px] lg:text-[30px] lg:font-semibold mt-4 text-center" variants={itemVariants}>
                     Olá, sou Victor Bravim, desenvolvedor <span className='text-[#0086B0]'>Front-End.</span>
                 </motion.p>
 
