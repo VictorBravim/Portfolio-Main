@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { FaWhatsapp, FaEnvelope } from 'react-icons/fa'; // Importando os ícones
+import { FaWhatsapp, FaEnvelope, FaArrowUp } from 'react-icons/fa';
 import emailjs from 'emailjs-com';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -48,21 +48,21 @@ const Footer: React.FC = () => {
             { user_name, user_email, message },
             'TvVDzHFLwBkyukoGy'
         )
-        .then(() => {
-            setIsSent(true); // Atualiza o estado para indicar que a mensagem foi enviada
-            setFormData({
-                user_name: '',
-                user_email: '',
-                message: ''
-            }); // Limpa os campos após envio
-        }, (error) => {
-            console.log(error.text);
-            alert('Erro ao enviar mensagem. Por favor, tente novamente mais tarde.'); // Alerta simples sem Toast
-        });
+            .then(() => {
+                setIsSent(true); // Atualiza o estado para indicar que a mensagem foi enviada
+                setFormData({
+                    user_name: '',
+                    user_email: '',
+                    message: ''
+                }); // Limpa os campos após envio
+            }, (error) => {
+                console.log(error.text);
+                alert('Erro ao enviar mensagem. Por favor, tente novamente mais tarde.'); // Alerta simples sem Toast
+            });
     };
 
     return (
-        <footer className="relative bg-black">
+        <footer id="footer" className="relative bg-black">
             <div
                 className="bg-cover bg-center h-[1050px] lg:h-[900px]"
                 style={{ backgroundImage: 'url(/images/Footer.png)' }}
@@ -81,7 +81,7 @@ const Footer: React.FC = () => {
                             <div className="flex flex-col space-y-4 w-full md:w-1/3">
                                 <a
                                     href="https://wa.me/5512996839077"
-                                    className="bg-gradient-to-b from-[#8c8c8c0c] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-lg p-6 flex flex-col items-center justify-center text-center flex-grow cursor-pointer transition-transform duration-200 hover:scale-105"
+                                    className="bg-gradient-to-b from-[#8c8c8c0c] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-lg p-6 flex flex-col items-center justify-center text-center flex-grow cursor-pointer transition-transform duration-200"
                                 >
                                     <FaWhatsapp className="text-white mb-2" size={40} />
                                     <div>
@@ -91,7 +91,7 @@ const Footer: React.FC = () => {
                                 </a>
                                 <a
                                     href="mailto:victorrafaelbravim@gmail.com"
-                                    className="bg-gradient-to-b from-[#8c8c8c0c] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-lg p-6 flex flex-col items-center justify-center text-center flex-grow cursor-pointer transition-transform duration-200 hover:scale-105"
+                                    className="bg-gradient-to-b from-[#8c8c8c0c] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-lg p-6 flex flex-col items-center justify-center text-center flex-grow cursor-pointer transition-transform duration-200"
                                 >
                                     <FaEnvelope className="text-white mb-2" size={40} />
                                     <div>
@@ -106,35 +106,35 @@ const Footer: React.FC = () => {
                                 <h3 className="text-lg font-semibold text-gray-300">Entre em Contato</h3>
                                 <form onSubmit={handleSubmit} className="mt-4">
                                     <div className="flex flex-col space-y-4">
-                                        <input 
-                                            type="text" 
+                                        <input
+                                            type="text"
                                             name="user_name"
-                                            placeholder="Seu Nome" 
+                                            placeholder="Seu Nome"
                                             value={formData.user_name}
                                             onChange={handleInputChange}
                                             className="p-3 rounded border border-white border-opacity-10 bg-transparent text-gray-300 focus:outline-none focus:border-[#0086B0] transition duration-200"
                                             required
                                         />
-                                        <input 
-                                            type="email" 
+                                        <input
+                                            type="email"
                                             name="user_email"
-                                            placeholder="Seu Email" 
+                                            placeholder="Seu Email"
                                             value={formData.user_email}
                                             onChange={handleInputChange}
                                             className="p-3 rounded border border-white border-opacity-10 bg-transparent text-gray-300 focus:outline-none focus:border-[#0086B0] transition duration-200"
                                             required
                                         />
-                                        <textarea 
+                                        <textarea
                                             name="message"
-                                            placeholder="Sua Mensagem" 
+                                            placeholder="Sua Mensagem"
                                             value={formData.message}
                                             onChange={handleInputChange}
                                             className="p-3 rounded border border-white border-opacity-10 bg-transparent text-gray-300 focus:outline-none focus:border-[#0086B0] transition duration-200"
                                             rows={4}
                                             required
                                         />
-                                        <button 
-                                            type="submit" 
+                                        <button
+                                            type="submit"
                                             className={`p-3 rounded ${isSent ? 'bg-white text-black' : 'bg-[#0086B0] hover:bg-white text-white hover:text-black transition duration-200'}`}
                                             disabled={isSent} // Desabilita o botão após o envio
                                         >
@@ -146,6 +146,18 @@ const Footer: React.FC = () => {
                         </div>
                     </div>
                 </motion.div>
+                <motion.button
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: 1 }}
+                    onClick={() => {
+                        document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="absolute bottom-6 right-6 bg-[#0086B0] text-white p-4 rounded-full shadow-lg hover:bg-white hover:text-[#0086B0] transition-colors duration-300 z-50"
+                    title="Voltar ao Topo"
+                >
+                    <FaArrowUp size={24} />
+                </motion.button>
             </div>
         </footer>
     );

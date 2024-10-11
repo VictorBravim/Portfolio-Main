@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
     };
 
     return (
-        <div className="relative flex flex-col items-center justify-center w-full h-[950px] lg:h-[1770px]"
+        <div id="hero" className="relative flex flex-col items-center justify-center w-full h-[950px] lg:h-[1770px]"
             style={{ backgroundImage: 'url(/images/Portfolio.png)', backgroundSize: 'cover' }}>
             <motion.div
                 className="absolute inset-0 flex flex-col items-center justify-center text-white lg:pt-12"
@@ -51,9 +51,27 @@ const Hero: React.FC = () => {
                 </motion.p>
 
                 <motion.div className="mt-8 space-x-4 flex flex-row justify-center" variants={itemVariants}>
-                    <button className="text-[18px] lg:text-[24px] font-bold px-8 py-1.5 bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-full">Contato</button>
-                    <button className="text-[18px] lg:text-[24px] font-bold px-8 py-1.5 bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-full">Orçamento</button>
-                </motion.div>
+    <button 
+        className="text-[18px] lg:text-[24px] font-bold px-8 py-1.5 bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-full"
+        onClick={() => {
+            document.getElementById('footer')?.scrollIntoView({ behavior: 'smooth' });
+        }}
+    >
+        Contato
+    </button>
+    <a
+        href="https://wa.me/5512996839077" 
+        target="_blank" 
+        rel="noopener noreferrer"
+    >
+        <button 
+            className="text-[18px] lg:text-[24px] font-bold px-8 py-1.5 bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-full"
+        >
+            Orçamento
+        </button>
+    </a>
+</motion.div>
+
 
                 {/* Seção de projetos */}
                 <motion.div className="grid gap-4 mt-8 lg:mt-32 w-full px-4 sm:px-20 md:px-40" variants={containerVariants}>

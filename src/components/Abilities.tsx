@@ -65,7 +65,7 @@ const Abilities: React.FC = () => {
                         animate={inView ? { opacity: 1, scale: 1 } : {}}
                         transition={{ duration: 0.5, delay: index * 0.05 }} // Delays baseados no índice
                     >
-                        <div className="group bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-lg w-full h-full flex items-center justify-center transition-transform duration-300 transform hover:rotate-3 hover:-translate-y-2 hover:shadow-lg">
+                        <div className="group bg-gradient-to-b from-[#8c8c8c10] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-lg w-full h-full flex items-center justify-center transition-transform duration-300 transform hover:rotate-3 hover:-translate-y-2 hover:shadow-lg">
                         <Icon 
                             className="text-5xl group-hover:transform group-hover:scale-110 transition-transform duration-300 ease-out" 
                             style={{ color }} 

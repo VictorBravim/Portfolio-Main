@@ -54,10 +54,10 @@ const About: React.FC = () => {
                             <h3 className="font-inter text-[20px] sm:text-[24px] font-semibold mb-2">Cursos</h3>
                             <ul className="space-y-2">
                                 <li>
-                                    <strong className="text-[#0086B0]">Desenvolvedor Front-end</strong>
+                                    <strong className="text-[#0086B0]">UX e UI Design - GGTE - UNICAMP</strong>
                                 </li>
                                 <li>
-                                    <strong className="text-[#0086B0]">Estagiário de Desenvolvimento Web</strong>
+                                    <strong className="text-[#0086B0]">Desenvolvimento Web - Udemy</strong>
                                 </li>
                             </ul>
                         </div>
@@ -67,10 +67,10 @@ const About: React.FC = () => {
                             <h3 className="font-inter text-[20px] sm:text-[24px] font-semibold mb-2">Certificações</h3>
                             <ul className="space-y-2">
                                 <li>
-                                    <strong className="text-[#0086B0]">Full-Stack Web Development</strong>
+                                    <strong className="text-[#0086B0]">Inglês - Udemy</strong>
                                 </li>
                                 <li>
-                                    <strong className="text-[#0086B0]">Certificação em React e Next.js</strong>
+                                    <strong className="text-[#0086B0]">Python Profissional - Udemy</strong>
                                 </li>
                             </ul>
                         </div>
@@ -79,13 +79,13 @@ const About: React.FC = () => {
 
                 {/* Ícones sociais à direita */}
                 <div className="flex flex-row lg:flex-col justify-center items-center space-x-4 lg:space-x-0 lg:space-y-6">
-                    <a href="https://instagram.com/seu_perfil" target="_blank" rel="noopener noreferrer" className="w-14 h-14 bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-xl flex justify-center items-center text-white text-3xl transition-transform transform hover:scale-110">
+                    <a href="https://www.instagram.com/victorbravim_/" target="_blank" rel="noopener noreferrer" className="w-14 h-14 bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-xl flex justify-center items-center text-white text-3xl transition-transform transform hover:scale-110">
                         <FaInstagram />
                     </a>
-                    <a href="https://linkedin.com/in/seu_perfil" target="_blank" rel="noopener noreferrer" className="w-14 h-14 bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-xl flex justify-center items-center text-white text-3xl transition-transform transform hover:scale-110">
+                    <a href="https://www.linkedin.com/in/VictorBravim/" target="_blank" rel="noopener noreferrer" className="w-14 h-14 bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-xl flex justify-center items-center text-white text-3xl transition-transform transform hover:scale-110">
                         <FaLinkedin />
                     </a>
-                    <a href="https://github.com/seu_perfil" target="_blank" rel="noopener noreferrer" className="w-14 h-14 bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-xl flex justify-center items-center text-white text-3xl transition-transform transform hover:scale-110">
+                    <a href="https://github.com/VictorBravim" target="_blank" rel="noopener noreferrer" className="w-14 h-14 bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-xl flex justify-center items-center text-white text-3xl transition-transform transform hover:scale-110">
                         <FaGithub />
                     </a>
                 </div>

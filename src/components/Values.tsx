@@ -43,13 +43,13 @@ const plans = [
     },
     {
         title: 'Avançado',
-        description: 'Desenvolvimento com ferramentas no-code como WordPress.',
+        description: 'Desenvolvimento com WordPress & Elementor.',
         price: 'R$ 999',
         icon: <FaRocket size={64} className="text-[#0086B0]" />,
         benefits: [
             'Criação com WordPress',
             'Customização via Elementor',
-            'Gerenciamento de conteúdo intuitivo',
+            'Gerenciamento de conteúdo',
             'Atualizações fáceis',
         ],
     },
@@ -76,12 +76,13 @@ const Values: React.FC = () => {
                 {plans.map((plan, index) => (
                     <motion.div 
                         key={index} 
-                        className="bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-lg shadow-md p-6 flex flex-col items-center"
+                        className="bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-lg shadow-md p-4 flex flex-col items-center"
                         initial="hidden"
                         animate={inView ? "visible" : "hidden"}
                         variants={fadeIn}
                         transition={{ duration: 0.5, delay: index * 0.1 }} // Delay baseado no índice
                     >
+                        <div className="bg-gradient-to-b from-[#8c8c8c10] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-lg shadow-md p-6 flex flex-col items-center">
                         <div className="mb-4">{plan.icon}</div>
                         <h3 className="text-2xl font-bold text-gray-300">{plan.title}</h3>
                         <p className="mt-2 text-lg text-gray-400 text-center">{plan.description}</p>
@@ -99,6 +100,7 @@ const Values: React.FC = () => {
                         <button className="mt-6 bg-[#0086B0] text-white py-2 px-4 rounded-full hover:bg-[#007BA0] transition-colors duration-200">
                             Contratar
                         </button>
+                        </div>
                     </motion.div>
                 ))}
             </div>
