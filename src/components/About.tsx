@@ -54,10 +54,10 @@ const About: React.FC = () => {
                             <h3 className="font-inter text-[20px] sm:text-[24px] font-semibold mb-2">Cursos</h3>
                             <ul className="space-y-2">
                                 <li>
-                                    <strong className="text-[#0086B0]">UX e UI Design - GGTE - UNICAMP</strong>
+                                    <strong className="text-[#0086B0]">UX e UI Design - <p className='text-white'>GGTE - UNICAMP</p></strong>
                                 </li>
                                 <li>
-                                    <strong className="text-[#0086B0]">Desenvolvimento Web - Udemy</strong>
+                                    <strong className="text-[#0086B0]">Desenvolvimento Web - <p className='text-white'>Udemy</p></strong>
                                 </li>
                             </ul>
                         </div>
@@ -67,10 +67,10 @@ const About: React.FC = () => {
                             <h3 className="font-inter text-[20px] sm:text-[24px] font-semibold mb-2">Certificações</h3>
                             <ul className="space-y-2">
                                 <li>
-                                    <strong className="text-[#0086B0]">Inglês - Udemy</strong>
+                                    <strong className="text-[#0086B0]">Inglês - <p className='text-white'>Udemy</p></strong>
                                 </li>
                                 <li>
-                                    <strong className="text-[#0086B0]">Python Profissional - Udemy</strong>
+                                    <strong className="text-[#0086B0]">Python Profissional - <p className='text-white'>Udemy</p></strong>
                                 </li>
                             </ul>
                         </div>

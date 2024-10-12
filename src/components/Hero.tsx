@@ -77,8 +77,6 @@ const Hero: React.FC = () => {
                         </button>
                     </a>
                 </motion.div>
-
-
                 {/* Seção de projetos */}
                 <motion.div className="grid gap-4 mt-8 lg:mt-32 w-full px-4 sm:px-20 lg:px-40" variants={containerVariants}>
                     <motion.div className="flex flex-col md:flex-row justify-center gap-8 mb-2" variants={itemVariants}>
