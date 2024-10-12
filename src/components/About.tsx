@@ -40,11 +40,10 @@ const About: React.FC = () => {
                 {/* Texto e conteúdo à direita */}
                 <div className="flex-1 text-center lg:text-left pl-0 sm:pl-12 space-y-6">
                     <p className="text-[20px] lg:text-[22px] text-white leading-relaxed">
-                        Olá, sou Victor Bravim, um desenvolvedor front-end de Lorena, SP.
-                        Com experiência <br /> em desenvolvimento web e design UI/UX, busco
-                        criar soluções eficientes e atraentes. <br /> Além disso, utilizo ferramentas
-                        no-code como WordPress para transformar ideias <br /> em projetos
-                        funcionais e impactantes.
+                        Olá, eu sou Victor Bravim, desenvolvedor front-end. Trabalho com desenvolvimento <br /> 
+                        web, criando sites com programação e também cuidando do design UI/UX utilizando o <br /> 
+                        Figma. Tenho experiência em criar sites usando também ferramentas no-code, como <br /> 
+                        WordPress e Elementor, transformando ideias em projetos funcionais e atrativos.
                     </p>
 
                     {/* Seções de Experiência e Cursos lado a lado */}
@@ -54,10 +53,14 @@ const About: React.FC = () => {
                             <h3 className="font-inter text-[20px] sm:text-[24px] font-semibold mb-2">Cursos</h3>
                             <ul className="space-y-2">
                                 <li>
-                                    <strong className="text-[#0086B0]">UX e UI Design - <p className='text-white'>GGTE - UNICAMP</p></strong>
+                                    <strong className="text-[#0086B0]">
+                                        UX e UI Design - <span className="text-white">GGTE - UNICAMP</span>
+                                    </strong>
                                 </li>
                                 <li>
-                                    <strong className="text-[#0086B0]">Desenvolvimento Web - <p className='text-white'>Udemy</p></strong>
+                                    <strong className="text-[#0086B0]">
+                                        Desenvolvimento Web - <span className='text-white'>Udemy</span>
+                                    </strong>
                                 </li>
                             </ul>
                         </div>
@@ -67,10 +70,10 @@ const About: React.FC = () => {
                             <h3 className="font-inter text-[20px] sm:text-[24px] font-semibold mb-2">Certificações</h3>
                             <ul className="space-y-2">
                                 <li>
-                                    <strong className="text-[#0086B0]">Inglês - <p className='text-white'>Udemy</p></strong>
+                                    <strong className="text-[#0086B0]">Inglês - <span className='text-white'>Udemy</span></strong>
                                 </li>
                                 <li>
-                                    <strong className="text-[#0086B0]">Python Profissional - <p className='text-white'>Udemy</p></strong>
+                                    <strong className="text-[#0086B0]">Python Profissional - <span className='text-white'>Udemy</span></strong>
                                 </li>
                             </ul>
                         </div>
