@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaClipboardList, FaCode, FaRocket, FaWrench } from 'react-icons/fa'; // Ícones ajustados
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -67,6 +67,21 @@ const Values: React.FC = () => {
         visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
     };
 
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+
+        handleResize(); // Checa no primeiro render
+        window.addEventListener('resize', handleResize); // Checa quando redimensionado
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     return (
         <section className="pt-20 lg:pt-40 px-4 sm:px-8 lg:px-[160px] bg-black" ref={ref}>
             <h2 className="font-inter text-[25px] lg:text-[75px] font-bold text-center mb-8">
@@ -78,7 +93,7 @@ const Values: React.FC = () => {
                         key={index} 
                         className="bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-lg shadow-md p-4 flex flex-col items-center"
                         initial="hidden"
-                        animate={inView ? "visible" : "hidden"}
+                        animate={inView && !isMobile ? "visible" : "hidden"}
                         variants={fadeIn}
                         transition={{ duration: 0.5, delay: index * 0.1 }} // Delay baseado no índice
                     >

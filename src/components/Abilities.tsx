@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { 
     SiJavascript, SiReact, SiNextdotjs, SiCss3, SiTailwindcss, 
     SiTypescript, SiVuedotjs, SiFirebase, SiAngular, SiGit, 
@@ -33,11 +33,25 @@ const abilitiesData = [
 ];
 
 const Abilities: React.FC = () => {
-    // Define o observer
+    const [isMobile, setIsMobile] = useState(false);
     const { ref, inView } = useInView({
-        threshold: 0.1, // Ativa a animação quando 10% da seção estiver visível
-        triggerOnce: true // A animação ocorre apenas uma vez
+        threshold: 0.1,
+        triggerOnce: true
     });
+
+    useEffect(() => {
+        // Verifica se o dispositivo é mobile com base no tamanho da tela
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768); // Define como mobile se a largura for menor que 768px
+        };
+
+        handleResize(); // Verifica no primeiro render
+        window.addEventListener('resize', handleResize); // Atualiza ao redimensionar a janela
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     // Define a animação de entrada
     const fadeIn = {
@@ -54,16 +68,16 @@ const Abilities: React.FC = () => {
                 className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-10 gap-4 sm:gap-8 lg:gap-12"
                 initial="hidden"
                 animate={inView ? "visible" : "hidden"}
-                variants={fadeIn}
+                variants={!isMobile ? fadeIn : {}} // Desativa as animações se for mobile
             >
                 {abilitiesData.map(({ icon: Icon, name, color }, index) => (
                     <motion.div 
                         key={index} 
                         className="group bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-lg flex items-center justify-center h-24 transition-transform duration-300 transform hover:rotate-3 hover:-translate-y-2 hover:shadow-lg p-2"
                         style={{ perspective: '1000px' }}
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={inView ? { opacity: 1, scale: 1 } : {}}
-                        transition={{ duration: 0.5, delay: index * 0.05 }} // Delays baseados no índice
+                        initial={!isMobile ? { opacity: 0, scale: 0.9 } : {}} // Verifica se deve aplicar animação
+                        animate={inView && !isMobile ? { opacity: 1, scale: 1 } : {}} // Anima apenas se não for mobile
+                        transition={{ duration: 0.5, delay: index * 0.05 }}
                     >
                         <div className="group bg-gradient-to-b from-[#8c8c8c10] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-lg w-full h-full flex items-center justify-center transition-transform duration-300 transform hover:rotate-3 hover:-translate-y-2 hover:shadow-lg">
                         <Icon 
