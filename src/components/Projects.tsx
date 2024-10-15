@@ -56,34 +56,18 @@ const projects = [
 const Projects: React.FC = () => {
     // Controle de animação do Framer Motion
     const controls = useAnimation();
-    const [isMobile, setIsMobile] = useState(false);
-
     // Detecta se a seção "Projects" está visível
     const { ref, inView } = useInView({
         triggerOnce: true,  // Anima apenas uma vez
         threshold: 0.1,     // Quando 10% da seção entra na tela
     });
 
-    // Verifica se o dispositivo é mobile
-    useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth < 768);
-        };
-
-        handleResize(); // Verifica no primeiro render
-        window.addEventListener('resize', handleResize); // Atualiza ao redimensionar a janela
-
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
-
     // Dispara a animação apenas quando a seção está em vista
     useEffect(() => {
-        if (inView && !isMobile) {
+        if (inView) {
             controls.start("visible");
         }
-    }, [inView, controls, isMobile]);
+    }, [inView, controls]);
 
     return (
         <section ref={ref} className="lg:py-12 px-4 sm:px-8 lg:px-[160px] bg-black">
@@ -94,7 +78,7 @@ const Projects: React.FC = () => {
                 className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
                 initial="hidden"
                 animate={controls}  // Controla a animação com base no scroll
-                variants={!isMobile ? {
+                variants={{
                     visible: {
                         opacity: 1,
                         y: 0,
@@ -106,7 +90,7 @@ const Projects: React.FC = () => {
                         opacity: 0,
                         y: 20
                     }
-                } : {}}  // Desativa as animações no mobile
+                }}
             >
                 {projects.map((project, index) => (
                     <ProjectCard key={index} project={project} />

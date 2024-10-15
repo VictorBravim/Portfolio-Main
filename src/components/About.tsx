@@ -1,29 +1,15 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 const About: React.FC = () => {
-    const [isMobile, setIsMobile] = useState(false);
+    // Define o observer
     const { ref, inView } = useInView({
-        threshold: 0.1,
-        triggerOnce: true
+        threshold: 0.1, // Define o ponto em que a animação será ativada
+        triggerOnce: true // Garante que a animação aconteça apenas uma vez
     });
-
-    useEffect(() => {
-        // Verifica se o dispositivo é mobile com base no tamanho da tela
-        const handleResize = () => {
-            setIsMobile(window.innerWidth < 768); // Define como mobile se a largura for menor que 768px
-        };
-
-        handleResize(); // Verifica no primeiro render
-        window.addEventListener('resize', handleResize); // Atualiza ao redimensionar a janela
-
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
 
     // Define as animações para a entrada
     const fadeIn = {
@@ -40,7 +26,7 @@ const About: React.FC = () => {
                 className="bg-gradient-to-b from-[#8c8c8c25] to-[#16161636] backdrop-blur-[4px] border border-white border-opacity-10 rounded-lg overflow-hidden w-full p-4 sm:p-8 flex flex-col sm:flex-row items-center space-y-8 sm:space-y-0 sm:space-x-12"
                 initial="hidden"
                 animate={inView ? "visible" : "hidden"}
-                variants={!isMobile ? fadeIn : {}} // Desativa animação no mobile
+                variants={fadeIn}
             >
                 {/* Imagem à esquerda (aumentada) */}
                 <div className="flex justify-center">

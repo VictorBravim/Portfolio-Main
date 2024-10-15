@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { FaClipboardList, FaDraftingCompass, FaCode, FaHeadset } from 'react-icons/fa'; // Ícones do React Icons
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -24,21 +24,6 @@ const Work: React.FC = () => {
         visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
     };
 
-    const [isMobile, setIsMobile] = useState(false);
-
-    useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth < 768);
-        };
-
-        handleResize(); // Checa no primeiro render
-        window.addEventListener('resize', handleResize); // Checa quando redimensionado
-
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
-
     return (
         <section className="pt-20 lg:pt-40 px-4 sm:px-8 lg:px-[160px] bg-black" ref={ref}>
             <h2 className="font-inter text-[25px] lg:text-[75px] font-bold text-center mb-8">
@@ -50,14 +35,14 @@ const Work: React.FC = () => {
                         <motion.div
                             className="flex flex-col items-center w-full lg:max-w-[300px] lg:mt-0 mt-6 mb-6 lg:mb-8" 
                             initial="hidden"
-                            animate={inView && !isMobile ? "visible" : "hidden"}
+                            animate={inView ? "visible" : "hidden"}
                             variants={fadeIn}
                             transition={{ duration: 0.5, delay: index * 0.1 }} // Delay baseado no índice
                         >
                             <div className="bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-lg shadow-md w-full h-[320px] flex flex-col items-center justify-center text-center p-4">
-                                <div className="bg-gradient-to-b from-[#8c8c8c10] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-lg shadow-md w-full h-[320px] flex flex-col items-center justify-center text-center p-4">
-                                    {item.icon}
-                                    <h3 className="mt-4 text-2xl font-bold text-gray-300">{item.title}</h3>
+                            <div className="bg-gradient-to-b from-[#8c8c8c10] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-lg shadow-md w-full h-[320px] flex flex-col items-center justify-center text-center p-4">
+                                {item.icon}
+                                <h3 className="mt-4 text-2xl font-bold text-gray-300">{item.title}</h3>
                                 </div>
                             </div>
                         </motion.div>
