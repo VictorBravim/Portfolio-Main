@@ -98,7 +98,9 @@ const Values: React.FC = () => {
                         </ul>
 
                         <button className="mt-6 bg-[#0086B0] text-white py-2 px-4 rounded-full hover:bg-[#007BA0] transition-colors duration-200">
+                            <a href="https://wa.me/5512996839077" >
                             Contratar
+                            </a>
                         </button>
                         </div>
                     </motion.div>
