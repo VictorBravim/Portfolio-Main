@@ -54,12 +54,12 @@ const About: React.FC = () => {
                             <ul className="space-y-2">
                                 <li>
                                     <strong className="text-[#0086B0]">
-                                        UX e UI Design - <span className="text-white">GGTE - UNICAMP</span>
+                                        UX e UI Design - <span className="text-white">UNICAMP</span>
                                     </strong>
                                 </li>
                                 <li>
                                     <strong className="text-[#0086B0]">
-                                        Desenvolvimento Web - <span className='text-white'>Udemy</span>
+                                        Desenvolvimento Web - <span className='text-white'>Codecademy</span>
                                     </strong>
                                 </li>
                             </ul>
@@ -70,10 +70,10 @@ const About: React.FC = () => {
                             <h3 className="font-inter text-[20px] sm:text-[24px] font-semibold mb-2">Certificações</h3>
                             <ul className="space-y-2">
                                 <li>
-                                    <strong className="text-[#0086B0]">Inglês - <span className='text-white'>Udemy</span></strong>
+                                    <strong className="text-[#0086B0]">Inglês - <span className='text-white'>Intermediário</span></strong>
                                 </li>
                                 <li>
-                                    <strong className="text-[#0086B0]">Python Profissional - <span className='text-white'>Udemy</span></strong>
+                                    <strong className="text-[#0086B0]">Python - <span className='text-white'>Profissional</span></strong>
                                 </li>
                             </ul>
                         </div>
