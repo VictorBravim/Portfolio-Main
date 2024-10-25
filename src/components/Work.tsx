@@ -49,7 +49,7 @@ const Work: React.FC = () => {
                         {index < workflowData.length - 1 && (
                             <div className="flex items-center justify-center lg:w-[160px] h-full lg:h-[320px]">
                                 <img
-                                    src="/images/Vector.png"
+                                    src="/images/Vector.webp"
                                     alt="Seta entre os cards"
                                     className="w-full h-full object-contain lg:rotate-0 rotate-90"
                                 />

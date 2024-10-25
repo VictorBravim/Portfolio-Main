@@ -31,7 +31,7 @@ const About: React.FC = () => {
                 {/* Imagem à esquerda (aumentada) */}
                 <div className="flex justify-center">
                     <img
-                        src="/images/Perfil.jpg"
+                        src="/images/Perfil.webp"
                         alt="Victor Bravim"
                         className="rounded-full w-[200px] h-[200px] sm:w-[340px] sm:h-[340px] object-cover"
                     />

@@ -8,47 +8,47 @@ import Image from "next/image";
 const projects = [
     {
         name: 'Seton',
-        image: '/images/Seton.png',
+        image: '/images/Seton.webp',
         link: 'https://seton-eight.vercel.app/'
     },
     {
         name: 'ArenaX',
-        image: '/images/ArenaX.png',
+        image: '/images/ArenaX.webp',
         link: 'https://arena-x-zeta.vercel.app'
     },
     {
         name: 'Norishi',
-        image: '/images/Norishi.png',
+        image: '/images/Norishi.webp',
         link: 'https://norishi.vercel.app'
     },
     {
         name: 'RedRoast',
-        image: '/images/RedRoast.png',
+        image: '/images/RedRoast.webp',
         link: 'https://redroast.vercel.app'
     },
     {
         name: 'TrueVR',
-        image: '/images/TrueVR.png',
+        image: '/images/TrueVR.webp',
         link: 'https://truevr.vercel.app'
     },
     {
         name: 'WebStore',
-        image: '/images/WebStore.png',
+        image: '/images/WebStore.webp',
         link: 'https://web-store-pi.vercel.app'
     },
     {
         name: 'Exotics',
-        image: '/images/Exotics.png',
+        image: '/images/Exotics.webp',
         link: 'https://exotics.vercel.app'
     },
     {
         name: 'Cofty',
-        image: '/images/Cofty.png',
+        image: '/images/Cofty.webp',
         link: 'https://cofty.vercel.app'
     },
     {
         name: 'MeshWear',
-        image: '/images/MeshWear.png',
+        image: '/images/MeshWear.webp',
         link: 'https://meshwear.vercel.app'
     }
 ];
