@@ -15,7 +15,7 @@ const faqs = [
     },
     {
         question: 'O orçamento é gratuito?',
-        answer: 'Não, o orçamento é totalmente gratuito. Você só precisará pagar caso decida seguir em frente com o projeto e aceitar o valor apresentado. Assim, pode avaliar o projeto sem compromisso.',
+        answer: 'Sim, o orçamento é totalmente gratuito. Você só precisará pagar caso decida seguir em frente com o projeto e aceitar o valor apresentado. Assim, pode avaliar o projeto sem compromisso.',
     },
     {
         question: 'Os sites são responsivos?',

@@ -33,13 +33,11 @@ const abilitiesData = [
 ];
 
 const Abilities: React.FC = () => {
-    // Define o observer
     const { ref, inView } = useInView({
-        threshold: 0.1, // Ativa a animação quando 10% da seção estiver visível
-        triggerOnce: true // A animação ocorre apenas uma vez
+        threshold: 0.1,
+        triggerOnce: true 
     });
 
-    // Define a animação de entrada
     const fadeIn = {
         hidden: { opacity: 0, y: 20 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
@@ -63,7 +61,7 @@ const Abilities: React.FC = () => {
                         style={{ perspective: '1000px' }}
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={inView ? { opacity: 1, scale: 1 } : {}}
-                        transition={{ duration: 0.5, delay: index * 0.05 }} // Delays baseados no índice
+                        transition={{ duration: 0.5, delay: index * 0.05 }} 
                     >
                         <div className="group bg-gradient-to-b from-[#8c8c8c10] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-lg w-full h-full flex items-center justify-center transition-transform duration-300 transform hover:rotate-3 hover:-translate-y-2 hover:shadow-lg">
                         <Icon 
