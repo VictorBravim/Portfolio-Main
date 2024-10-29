@@ -71,7 +71,7 @@ const Projects: React.FC = () => {
 
     return (
         <section ref={ref} className="lg:py-12 px-4 sm:px-8 lg:px-[160px] bg-black">
-            <h2 className="font-inter text-[25px] lg:text-[75px] font-bold text-center mb-8">
+            <h2 className="font-inter text-[32px] lg:text-[75px] font-bold text-center mb-8">
                 Projetos <span className="text-[#0086B0]">Recentes</span>
             </h2>
             <motion.div 

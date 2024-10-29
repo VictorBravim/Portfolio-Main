@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { FaRegEnvelope, FaWhatsapp } from 'react-icons/fa';
 
 const Hero: React.FC = () => {
     const containerVariants = {
@@ -58,12 +59,13 @@ const Hero: React.FC = () => {
                 
                 <motion.div className="mt-8 space-x-4 flex flex-row justify-center" variants={itemVariants}>
                     <button
-                        className="text-[18px] lg:text-[24px] font-bold px-8 py-1.5 bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-full"
+                        className="text-[18px] lg:text-[24px] font-bold px-8 py-1.5 bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-full flex items-center space-x-3"
                         onClick={() => {
                             document.getElementById('footer')?.scrollIntoView({ behavior: 'smooth' });
                         }}
                     >
-                        Contato
+                        <FaRegEnvelope className="text-2xl" />
+                        <span>Contatos</span>
                     </button>
                     <a
                         href="https://wa.me/5512996839077"
@@ -71,9 +73,10 @@ const Hero: React.FC = () => {
                         rel="noopener noreferrer"
                     >
                         <button
-                            className="text-[18px] lg:text-[24px] font-bold px-8 py-1.5 bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-full"
+                            className="text-[18px] lg:text-[24px] font-bold px-8 py-1.5 bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-full flex items-center space-x-3"
                         >
-                            Orçamento
+                            <FaWhatsapp className="text-2xl" />
+                            <span>Orçamento</span>
                         </button>
                     </a>
                 </motion.div>

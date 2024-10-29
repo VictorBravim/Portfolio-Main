@@ -26,7 +26,7 @@ const Work: React.FC = () => {
 
     return (
         <section className="pt-20 lg:pt-40 px-4 sm:px-8 lg:px-[160px] bg-black" ref={ref}>
-            <h2 className="font-inter text-[25px] lg:text-[75px] font-bold text-center mb-8">
+            <h2 className="font-inter text-[32px] lg:text-[75px] font-bold text-center mb-8">
                 Fluxo de <span className="text-[#0086B0]">Trabalho</span>
             </h2>
             <div className="flex flex-col md:flex-row justify-between items-center space-x-0 w-full">

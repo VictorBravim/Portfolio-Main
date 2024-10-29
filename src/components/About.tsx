@@ -19,7 +19,7 @@ const About: React.FC = () => {
 
     return (
         <section className="pt-20 lg:pt-28 px-4 sm:px-8 lg:px-[160px] bg-black" ref={ref}>
-            <h2 className="font-inter text-[25px] lg:text-[75px] font-bold text-center mb-8">
+            <h2 className="font-inter text-[32px] lg:text-[75px] font-bold text-center mb-8">
                 Sobre <span className="text-[#0086B0]">Mim</span>
             </h2>
             <motion.div
@@ -40,10 +40,10 @@ const About: React.FC = () => {
                 {/* Texto e conteúdo à direita */}
                 <div className="flex-1 text-center lg:text-left pl-0 sm:pl-12 space-y-6">
                     <p className="text-[20px] lg:text-[22px] text-white leading-relaxed">
-                        Olá, eu sou Victor Bravim, desenvolvedor front-end. Trabalho com desenvolvimento <br /> 
-                        web, criando sites com programação e também cuidando do design UI/UX utilizando o <br /> 
-                        Figma. Tenho experiência em criar sites usando também ferramentas no-code, como <br /> 
-                        WordPress e Elementor, transformando ideias em projetos funcionais e atrativos.
+                    Olá, eu sou Victor Bravim, desenvolvedor front-end. Trabalho com desenvolvimento web, <br />
+                    criando sites do zero e realizando a manutenção de sites já existentes, unindo <br />
+                    programação e design UI/UX no Figma. Tenho experiência com plataformas como WordPress <br />
+                    e Elementor, transformando ideias em projetos digitais que encantam e funcionam bem.
                     </p>
 
                     {/* Seções de Experiência e Cursos lado a lado */}
