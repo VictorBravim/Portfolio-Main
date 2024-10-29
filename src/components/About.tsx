@@ -40,10 +40,10 @@ const About: React.FC = () => {
                 {/* Texto e conteúdo à direita */}
                 <div className="flex-1 text-center lg:text-left pl-0 sm:pl-12 space-y-6">
                     <p className="text-[20px] lg:text-[22px] text-white leading-relaxed">
-                    Olá, eu sou Victor Bravim, desenvolvedor front-end. Trabalho com desenvolvimento web, <br />
-                    criando sites do zero e realizando a manutenção de sites já existentes, unindo <br />
-                    programação e design UI/UX no Figma. Tenho experiência com plataformas como WordPress <br />
-                    e Elementor, transformando ideias em projetos digitais que encantam e funcionam bem.
+                        Olá, eu sou Victor Bravim, desenvolvedor front-end. Trabalho com desenvolvimento web, <br />
+                        criando sites do zero e realizando a manutenção de sites já existentes, unindo <br />
+                        programação e design UI/UX no Figma. Tenho experiência com plataformas como WordPress <br />
+                        e Elementor, transformando ideias em projetos digitais que encantam e funcionam bem.
                     </p>
 
                     {/* Seções de Experiência e Cursos lado a lado */}
@@ -82,13 +82,31 @@ const About: React.FC = () => {
 
                 {/* Ícones sociais à direita */}
                 <div className="flex flex-row lg:flex-col justify-center items-center space-x-4 lg:space-x-0 lg:space-y-6">
-                    <a href="https://www.instagram.com/victorbravim_/" target="_blank" rel="noopener noreferrer" className="w-14 h-14 bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-xl flex justify-center items-center text-white text-3xl transition-transform transform hover:scale-110">
+                    <a
+                        href="https://www.instagram.com/victorbravim_/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-14 h-14 bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-xl flex justify-center items-center text-white text-3xl transition-transform transform hover:scale-110"
+                        aria-label="Perfil do Instagram de Victor Bravim"
+                    >
                         <FaInstagram />
                     </a>
-                    <a href="https://www.linkedin.com/in/VictorBravim/" target="_blank" rel="noopener noreferrer" className="w-14 h-14 bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-xl flex justify-center items-center text-white text-3xl transition-transform transform hover:scale-110">
+                    <a
+                        href="https://www.linkedin.com/in/VictorBravim/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-14 h-14 bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-xl flex justify-center items-center text-white text-3xl transition-transform transform hover:scale-110"
+                        aria-label="Perfil do LinkedIn de Victor Bravim"
+                    >
                         <FaLinkedin />
                     </a>
-                    <a href="https://github.com/VictorBravim" target="_blank" rel="noopener noreferrer" className="w-14 h-14 bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-xl flex justify-center items-center text-white text-3xl transition-transform transform hover:scale-110">
+                    <a
+                        href="https://github.com/VictorBravim"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-14 h-14 bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-xl flex justify-center items-center text-white text-3xl transition-transform transform hover:scale-110"
+                        aria-label="Perfil do GitHub de Victor Bravim"
+                    >
                         <FaGithub />
                     </a>
                 </div>

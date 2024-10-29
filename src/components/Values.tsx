@@ -8,7 +8,7 @@ const plans = [
     {
         title: 'Manutenção',
         description: 'Serviço de suporte e manutenção para garantir a estabilidade.',
-        price: 'R$ 149',
+        price: 'R$ 200',
         icon: <FaWrench size={64} className="text-[#0086B0]" />,
         benefits: [
             'Correção de bugs',
@@ -18,9 +18,9 @@ const plans = [
         ],
     },
     {
-        title: 'Básico',
-        description: 'Prototipagem e design UI/UX para sua aplicação.',
-        price: 'R$ 299',
+        title: 'Design UI/UX',
+        description: 'Criação de protótipos e design UI/UX para seu projeto.',
+        price: 'R$ 500',
         icon: <FaClipboardList size={64} className="text-[#0086B0]" />,
         benefits: [
             'Design responsivo',
@@ -30,9 +30,9 @@ const plans = [
         ],
     },
     {
-        title: 'Plus',
-        description: 'Desenvolvimento completo com código otimizado.',
-        price: 'R$ 599',
+        title: 'Desenvolvimento',
+        description: 'Desenvolvimento completo de aplicações com código otimizado.',
+        price: 'R$ 900',
         icon: <FaCode size={64} className="text-[#0086B0]" />,
         benefits: [
             'Código limpo e otimizado',
@@ -42,9 +42,9 @@ const plans = [
         ],
     },
     {
-        title: 'Avançado',
-        description: 'Desenvolvimento com WordPress & Elementor.',
-        price: 'R$ 999',
+        title: 'WordPress',
+        description: 'Desenvolvimento com WordPress e Elementor personalizado.',
+        price: 'R$ 1200',
         icon: <FaRocket size={64} className="text-[#0086B0]" />,
         benefits: [
             'Criação com WordPress',
@@ -97,7 +97,7 @@ const Values: React.FC = () => {
                             ))}
                         </ul>
 
-                        <button className="mt-6 bg-[#0086B0] text-white py-2 px-4 rounded-full hover:bg-[#007BA0] transition-colors duration-200">
+                        <button className="mt-6 bg-[#0086B0] text-white py-2 px-8 rounded-full hover:bg-[#007BA0] transition-colors duration-200">
                             <a href="https://wa.me/5512996839077" >
                             Contratar
                             </a>

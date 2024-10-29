@@ -65,7 +65,7 @@ const Footer: React.FC = () => {
         <footer id="footer" className="relative bg-black">
             <div
                 className="bg-cover bg-center h-[1050px] lg:h-[900px]"
-                style={{ backgroundImage: 'url(/images/Footer.png)' }}
+                style={{ backgroundImage: 'url(/images/Footer.webp)' }}
             >
                 <motion.div
                     ref={ref}
