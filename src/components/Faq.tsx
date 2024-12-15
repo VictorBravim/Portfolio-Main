@@ -50,43 +50,85 @@ const FAQ: React.FC = () => {
         setOpenIndex(openIndex === index ? null : index);
     };
 
+    // Dividir FAQs em duas colunas
+    const half = Math.ceil(faqs.length / 2);
+    const firstColumn = faqs.slice(0, half);
+    const secondColumn = faqs.slice(half);
+
     return (
         <section className="pt-20 lg:pt-40 px-4 sm:px-8 lg:px-[160px] bg-black" ref={ref}>
             <h2 className="font-inter text-[32px] lg:text-[75px] font-bold text-center mb-8">
                 Alguma <span className='text-[#0086B0]'>Dúvida</span>?
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {faqs.map((faq, index) => (
-                    <motion.div
-                        key={index}
-                        className={`bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-lg shadow-md transition-all duration-300 ease-in-out`}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={inView ? { opacity: 1, y: 0 } : {}}
-                        transition={{ duration: 0.5, delay: index * 0.1 }}
-                    >
-                        <div
-                            className={`flex justify-between items-center cursor-pointer p-4 ${openIndex === index ? 'h-auto' : 'h-16 overflow-hidden'}`}
-                            onClick={() => toggleAccordion(index)}
+            <div className="flex flex-col md:flex-row gap-8">
+                {/* Primeira coluna */}
+                <div className="flex-1 flex flex-col gap-4">
+                    {firstColumn.map((faq, index) => (
+                        <motion.div
+                            key={index}
+                            className="bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-lg shadow-md transition-all duration-300 ease-in-out"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={inView ? { opacity: 1, y: 0 } : {}}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
                         >
-                            <h3 className="text-sm lg:text-xl font-semibold text-gray-300 text-left">{faq.question}</h3>
-                            <div className={`transform transition-transform duration-300 ${openIndex === index ? 'rotate-45' : 'rotate-0'}`}>
-                                {openIndex === index ? <FaTimes className="text-gray-300" size={24} /> : <FaPlus className="text-gray-300" size={24} />}
-                            </div>
-                        </div>
-                        {/* Conteúdo do Accordion */}
-                        {openIndex === index && (
-                            <motion.div
-                                className="p-4"
-                                initial={{ opacity: 0, height: 0 }}
-                                animate={{ opacity: 1, height: 'auto' }}
-                                exit={{ opacity: 0, height: 0 }}
-                                transition={{ duration: 0.3 }}
+                            <div
+                                className="flex justify-between items-center cursor-pointer p-4"
+                                onClick={() => toggleAccordion(index)}
                             >
-                                <p className="text-lg text-gray-400 text-left">{faq.answer}</p>
-                            </motion.div>
-                        )}
-                    </motion.div>
-                ))}
+                                <h3 className="text-sm lg:text-xl font-semibold text-gray-300 text-left">{faq.question}</h3>
+                                <div className={`transform transition-transform duration-300 ${openIndex === index ? 'rotate-45' : 'rotate-0'}`}>
+                                    {openIndex === index ? <FaTimes className="text-gray-300" size={24} /> : <FaPlus className="text-gray-300" size={24} />}
+                                </div>
+                            </div>
+                            {/* Conteúdo do Accordion */}
+                            {openIndex === index && (
+                                <motion.div
+                                    className="p-4"
+                                    initial={{ opacity: 0, height: 0 }}
+                                    animate={{ opacity: 1, height: 'auto' }}
+                                    exit={{ opacity: 0, height: 0 }}
+                                    transition={{ duration: 0.3 }}
+                                >
+                                    <p className="text-lg text-gray-400 text-left">{faq.answer}</p>
+                                </motion.div>
+                            )}
+                        </motion.div>
+                    ))}
+                </div>
+                {/* Segunda coluna */}
+                <div className="flex-1 flex flex-col gap-4">
+                    {secondColumn.map((faq, index) => (
+                        <motion.div
+                            key={index}
+                            className="bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white border-opacity-10 rounded-lg shadow-md transition-all duration-300 ease-in-out"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={inView ? { opacity: 1, y: 0 } : {}}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                        >
+                            <div
+                                className="flex justify-between items-center cursor-pointer p-4"
+                                onClick={() => toggleAccordion(index + half)}
+                            >
+                                <h3 className="text-sm lg:text-xl font-semibold text-gray-300 text-left">{faq.question}</h3>
+                                <div className={`transform transition-transform duration-300 ${openIndex === index + half ? 'rotate-45' : 'rotate-0'}`}>
+                                    {openIndex === index + half ? <FaTimes className="text-gray-300" size={24} /> : <FaPlus className="text-gray-300" size={24} />}
+                                </div>
+                            </div>
+                            {/* Conteúdo do Accordion */}
+                            {openIndex === index + half && (
+                                <motion.div
+                                    className="p-4"
+                                    initial={{ opacity: 0, height: 0 }}
+                                    animate={{ opacity: 1, height: 'auto' }}
+                                    exit={{ opacity: 0, height: 0 }}
+                                    transition={{ duration: 0.3 }}
+                                >
+                                    <p className="text-lg text-gray-400 text-left">{faq.answer}</p>
+                                </motion.div>
+                            )}
+                        </motion.div>
+                    ))}
+                </div>
             </div>
         </section>
     );
